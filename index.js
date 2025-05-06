@@ -13,8 +13,12 @@ const diceImages = [
   let id;
   let id2;
   
+
   // Zar atan fonksiyon
   function zarAt() {
+    const diceSound =  new Audio("./dry-dices.mp3");
+    diceSound.play();
+
     const randomNumber = Math.floor(Math.random() * 6) + 1;
     const zarlar = diceImages.filter(dice => randomNumber === dice.value);
     
