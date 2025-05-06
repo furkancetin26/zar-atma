@@ -11,6 +11,7 @@ const diceImages = [
   const bitir = document.querySelector('#bitir');
   const sayi = document.querySelector('.sayi');
   let id;
+  let id2;
   
   // Zar atan fonksiyon
   function zarAt() {
@@ -27,9 +28,9 @@ const diceImages = [
     // Görseli sayfada göster
     sayi.innerHTML = ''; // Önceki görseli temizle
     sayi.appendChild(img);
-  
+    
     // Görseli belirli bir süre sonra kaldır
-    setTimeout(() => {
+    id2 = setTimeout(() => {
       sayi.innerHTML = '';  // Görseli kaldırmak için sayfayı temizle
     }, 1500);
   }
@@ -44,5 +45,6 @@ const diceImages = [
   // Bitir butonuna tıklanırsa
   bitir.addEventListener('click', function () {
     clearInterval(id); // Zar atmayı durdur
+    clearTimeout(id2);
   });
   
